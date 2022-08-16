@@ -51,18 +51,12 @@ def solveWordle(word):
                 break
 
             print(greenList,yellowList,wrongList)
-            list = getPossibleAnswers(answers,greenList,wrongList,yellowList)
+            answers = getPossibleAnswers(answers,greenList,wrongList,yellowList)
 
-            answers = list
-
-            word = list[0]
+            temp =  {answer : len(set(answer)) for answer in answers}
+            word = max(temp, key = temp.get)
 
 def getPossibleAnswers(answers,greenList,wrongList,yellowList):
-    # answers = getAnswerList()
-    # wrongList = ["r","e","c"]
-    # yellowList= {1: '', 2: '', 3: '', 4: 'a', 5: ''}
-    # greenList= {1: '', 2: '', 3: 't', 4: '', 5: ''}
-    # answers = ["rebut","awake","balst","mopax","batsy"] 
     newAnswers=[]
     testList = []
     for answer in answers:
