@@ -52,9 +52,8 @@ def solveWordle(word):
 
             print(greenList,yellowList,wrongList)
             answers = getPossibleAnswers(answers,greenList,wrongList,yellowList)
-
-            temp =  {answer : len(set(answer)) for answer in answers}
-            word = max(temp, key = temp.get)
+            
+            word = max(answers, key = lambda answer: len(set(answer)), default=None)
 
 def getPossibleAnswers(answers,greenList,wrongList,yellowList):
     newAnswers=[]
@@ -92,7 +91,7 @@ def getPossibleAnswers(answers,greenList,wrongList,yellowList):
 
         testList.clear()
     
-    print(len(newAnswers),newAnswers)
+    print(len(newAnswers),"-",newAnswers)
     return newAnswers
 
 def executeBot():
