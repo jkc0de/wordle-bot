@@ -29,13 +29,12 @@ def getAnswerList():
 
 def solveWordle(word):
      solved = 0
-     answers = getAllWordList()
+     answers = getAnswerList()
      while (solved != 1):
         rows = driver.find_elements(By.CLASS_NAME,"Row-module_row__dEHfN")
-        for row in rows:
+        for count,row in enumerate(rows):
             ActionChains(driver).send_keys(word).key_down(Keys.RETURN).key_up(Keys.RETURN).perform()
-            wait = WebDriverWait(driver, 5)
-            time.sleep(3)
+            time.sleep(2)
             cols = row.find_elements(By.CLASS_NAME,"Tile-module_tile__3ayIZ")
 
             for idc,col in enumerate(cols):
@@ -49,10 +48,10 @@ def solveWordle(word):
 
             if(all(list(greenList.values()))):
                 solved =1
-                print("WORD OF THE DAY:",word)
+                print("WORD OF THE DAY:",word,count+1)
                 break
 
-            print(greenList,yellowList,wrongList)
+            print("G:",greenList,"Y:",yellowList,"W:",wrongList)
 
             answers = getPossibleAnswers(answers,greenList,wrongList,yellowList)
 
@@ -103,6 +102,7 @@ def executeBot():
         driver.maximize_window()
         wait = WebDriverWait(driver, 5)
         closePopup = wait.until(EC.element_to_be_clickable((By.CLASS_NAME, 'Modal-module_closeIcon__b4z74'))).click()
+        time.sleep(2)
         solveWordle("react")
     except:
         traceback.print_exc()
