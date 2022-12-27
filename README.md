@@ -25,17 +25,6 @@ Allow ChromeDriver in terminal
 xattr -d com.apple.quarantine /usr/local/bin/chromedriver
 ```
 
-```bash
-pipenv install
-```
-
-Run virtual environment
-
-```bash
-pipenv shell
-```
-
-
 ## Usage
 
 Call executeBot() function to start bot, hard-coded first 5-letter guess will be "React"
