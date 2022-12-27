@@ -26,11 +26,7 @@ Extract ChromeDriver and transfer into /usr/local/bin folder
 Allow ChromeDriver in terminal 
 
 ```bash
-xattr
-
-https://user-images.githubusercontent.com/88771772/209678165-69d4c179-de49-43f2-97b8-309b153e7f91.mov
-
- -d com.apple.quarantine /usr/local/bin/chromedriver
+xattr -d com.apple.quarantine /usr/local/bin/chromedriver
 ```
 
 ## Usage
