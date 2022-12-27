@@ -15,6 +15,16 @@ Use the package manager + virtual environment [pipenv] to install required packa
 <br>
 Download ChromeDriver from https://chromedriver.chromium.org/downloads based on system's Google Chrome version
 
+For macOS
+
+Extract ChromeDriver and transfer into /usr/local/bin folder
+
+Allow ChromeDriver in terminal 
+
+```bash
+xattr -d com.apple.quarantine /usr/local/bin/chromedriver
+```
+
 ```bash
 pipenv install
 ```
@@ -25,11 +35,12 @@ Run virtual environment
 pipenv shell
 ```
 
+
 ## Usage
 
 Call executeBot() function to start bot, hard-coded first 5-letter guess will be "React"
 
 ```python
-executeBot()
+python3 app.py
 ```
 
