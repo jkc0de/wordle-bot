@@ -11,7 +11,7 @@ https://user-images.githubusercontent.com/88771772/209678765-ba59c312-8f11-481a-
 2. Bot opens official Wordle website and enters 5-letter guess.
 3. Bot analyzes and gets result from first guess which returns 3 lists, absent(grey), present(yellow) and correct(green).
 4. Bot algorithm will use the results gathered to calculate the next possible list of answers.
-5. Bot continues step (2-4) until Wordle puzzle is completed successfully.
+5. Bot continues step (3-4) until Wordle puzzle is completed successfully.
 
 ## Getting Started
 
