@@ -31,11 +31,11 @@ def solveWordle(word):
      solved = 0
      answers = getAnswerList()
      while (solved != 1):
-        rows = driver.find_elements(By.CLASS_NAME,"Row-module_row__dEHfN")
+        rows = driver.find_elements(By.CLASS_NAME,"Row-module_row__pwpBq")
         for count,row in enumerate(rows):
             ActionChains(driver).send_keys(word).key_down(Keys.RETURN).key_up(Keys.RETURN).perform()
             time.sleep(2)
-            cols = row.find_elements(By.CLASS_NAME,"Tile-module_tile__3ayIZ")
+            cols = row.find_elements(By.CLASS_NAME,"Tile-module_tile__UWEHN")
 
             for idc,col in enumerate(cols):
                 result = col.get_attribute("data-state")
@@ -101,7 +101,7 @@ def executeBot():
         driver.get("https://www.nytimes.com/games/wordle/index.html")
         driver.maximize_window()
         wait = WebDriverWait(driver, 5)
-        closePopup = wait.until(EC.element_to_be_clickable((By.CLASS_NAME, 'Modal-module_closeIcon__b4z74'))).click()
+        closePopup = wait.until(EC.element_to_be_clickable((By.CLASS_NAME, 'Modal-module_closeIcon__TcEKb'))).click()
         time.sleep(2)
         solveWordle("react")
     except:
